@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <input class="input-check" type="checkbox" id="check-menu">
+        <label class="burger-menu" for="check-menu">
+            <span class="burger-line"></span>
+        </label>
+        <a class="logo-link" href="../index.html">
+            <img class="nav-logo" src="../assets/image/logos/Logo.png" alt="logo-img">
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/contact.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/register.html">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/about-as.html">Acerca de</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="user-menu">
+            <a class="label-usuario" href="../pages/login.html">Usuario</a>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </header>
+    <main class="main-container-login">
+        
+        <section class="main-section">
+            <h1 class="main-title">Login</h1>
+            <div class='light x1'></div>
+            <div class='light x2'></div>
+            <div class='light x3'></div>
+            <div class='light x4'></div>
+            <div class='light x5'></div>
+            <div class='light x6'></div>
+            <div class='light x7'></div>
+            <div class='light x8'></div>
+            <div class='light x9'></div>
+            <form class="login">
+                <div class="div-login">
+                    <h2 class="title-login">Sign In</h2>
+
+                    <!-- email -->
+                    <div class="input-wrapper">
+                        <!-- <label class="label-login" for="inputCorreo">Correo Electronico</label> -->
+                        <input class="input-login" type="email" name="email" id="inputCorreo" placeholder="E-mail"
+                            required minlength="6" maxlength="140" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+                    </div>
+                    <!-- password -->
+                    <div class="input-wrapper">
+                        <!-- <label class="label-login" for="inputPass">Password</label> -->
+                        <input class="input-login" type="password" name="password" id="inputPass" placeholder="Password" required
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Debe contener al menos un número y una letra mayúscula y minúscula, y al menos 8 o más caracteres">
+                    </div>
+                    <!-- Submit -->
+                    <div class="btn-wrapper" >
+                        <button class="btn btn-login" type="submit">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+
+    <footer class="main-footer">
+        <section class="redes-sociales">
+            <ul>
+                <li class="social-link">
+                    <i class="icons fa-brands fa-facebook"></i> <a class="footer-link" href="https://www.facebook.com/"
+                        target="_blank">Facebook</a>
+                </li>
+                <li class="social-link">
+                    <i class="icons fa-brands fa-twitter"></i> <a class="footer-link" href="https://www.x.com/"
+                        target="_blank">Twitter</a>
+                </li>
+                <li class="social-link">
+                    <i class="icons fa-brands fa-instagram"></i> <a class="footer-link"
+                        href="https://www.Instagram.com/" target="_blank">Instagram</a>
+                </li>
+            </ul>
+        </section>
+        <section class="compania">
+            <img class="header-logo" src="../assets/image/logos/Logo.png" alt="Mundos Sublimados Logo">
+            <h2 class="compania-title">Mundos Sublimados</h2>
+        </section>
+        <section class="contact">
+            <ul>
+                <li class="social-contact">
+                    <i class="icons fa-regular fa-envelope"></i><a class="footer-link"
+                        href="../pages/contact.html">info@MundosSublimados.com</a>
+                </li>
+                <li class="social-contact">
+                    <i class="icons fas fa-phone"></i><a class="footer-link"
+                        href="../pages/contact.html">+54-11-4144-1646</a>
+                </li>
+                <li class="social-contact">
+                    <i class="icons  fas fa-store"></i><a class="footer-link" href="../pages/contact.html">Direccion:
+                        Balcarce 50 CABA</a>
+                </li>
+            </ul>
+        </section>
+    </footer>
+</body>
+
+</html>

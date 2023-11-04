@@ -1,0 +1,792 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300&family=Roboto:ital,wght@0,100;0,700;0,900;1,900&family=Shadows+Into+Light&display=swap');
+
+:root {
+    --primary-color: #f50a35;
+    --primary-color-dark: #ff6803;
+    --primary-about-color: radial-gradient(circle, rgba(152,150,150,0.7988445378151261) 0%, rgba(45,44,44,1) 100%);
+    --secondary-color: #222222;
+    --text-light: #090800;
+    --bg-light: #fffef7;
+    --font-family: 'roboto', sans-serif;
+    --font-family-h1: 'Shadows Into Light', sans-serif;
+    --padding-normal: 1rem;
+    --margin-align: auto;
+    --gradiente: radial-gradient(circle, rgba(226, 131, 41, 1) 0%, rgba(227, 26, 26, 1) 100%);
+    --gradiente-hover: radial-gradient(circle, rgba(227, 26, 26, 1) 100%, rgba(226, 131, 41, 1) 0%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: rgba(214, 209, 209, 0.423);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(153, 148, 148, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    height: 54px;
+    z-index: 2;
+}
+
+.main-title {
+    font-family: var(--font-family-h1);
+    font-size: 25px;
+    text-shadow: 0px 0px 9px var(--primary-color-dark);
+    display: flex;
+    justify-content: center;
+    padding: 1rem 1rem 0 1rem;
+    z-index: 0;
+    position: relative;
+
+}
+
+
+
+/* Input checkbox que vamos a ocultar pero vamos a utilizar su clase :check para activar otros elementos  */
+.input-check {
+    display: none;
+}
+
+/* LABEL: para activar el checkbox que no estamos viendo y armar nuestro menú hamburguesa */
+.burger-menu {
+    width: 50px;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Línea que vamos a centrar */
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    position: relative;
+
+}
+
+/* Líneas laterales */
+.burger-line::before,
+.burger-line::after {
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: var(--bg-light);
+    position: absolute;
+    transform: translateY(-10px);
+    transition: .3s ease-in-out;
+}
+
+/* Desaparecemos la línea intermedia */
+.input-check:checked~.burger-menu .burger-line {
+    background-color: transparent;
+}
+
+/* Rotamos las líneas laterales además de llevarlas al origen
+para formar la cruz */
+.input-check:checked~.burger-menu .burger-line::after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.input-check:checked~.burger-menu .burger-line::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+
+.burger-line::after {
+    transform: translateY(10px);
+}
+
+/* Main nav le damos una posición fixed pero con un width 0 para que no se vea, además ocultamos su overflow */
+.main-nav {
+    position: fixed;
+    left: 0;
+    /* Al definir top y bottom le decimos al elemento que se deba estirar y obtenga alguna altura */
+    top: 54px;
+    bottom: 0;
+    width: 0;
+    overflow: hidden;
+    background-color: var(--bg-light);
+    transition: width .3s ease-in-out;
+
+}
+
+/* Una vez que se checkea el hermano input a través del checkbox buscamos nuestro main nav y le decimos que cambie su ancho */
+.input-check:checked~.main-nav {
+    width: 240px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.nav-list {
+    margin: 5rem 0;
+    padding-right: 1rem;
+}
+
+.nav-item .nav-link {
+    padding: .25rem 1rem;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    transition: .5s;
+    z-index: 1;
+    position: relative;
+    color: var(--text-light);
+    font-weight: bold;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-top: 2px solid #262626;
+        border-bottom: 2px solid #262626;
+        transform: scaleY(2);
+        opacity: 0;
+        transition: .3s;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #262626;
+        transform: scale(0);
+        opacity: 0;
+        transition: .3s;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: #f5f3f7;
+
+        &:before {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+
+        &:after {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+    }
+}
+
+;
+
+.nav-item:not(:last-child) {
+    border-bottom: 1px solid #DDD
+}
+
+.main-container {
+    flex-grow: 1;
+    max-width: 92%;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 0 24px rgb(68, 67, 67);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(226, 221, 221, 1) 0%, rgba(164, 163, 163, 1) 100%);
+}
+
+.home-form{
+    background: linear-gradient(-45deg, #dedcdc, #ccc8ca, #d39ec7, #4a5b57);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
+
+/* banner */
+.main-banner {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.banner-info {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .53);
+    color: var(--bg-light);
+    top: 20%;
+    bottom: 10px;
+    right: 50%;
+    left: 3%;
+    font-size: 12px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .banner-title {
+        padding: .5rem 1rem;
+        font-family: var(--font-family-h1);
+        font-size: 38px;
+        text-shadow: -1px 0 #ff0000, 0 1px #ff0000, 1px 0 #ff0000, 0 -1px #ff0000;
+    }
+}
+
+.banner-text {
+    position: relative;
+    z-index: 0;
+}
+
+.banner-text::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 150%;
+    background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+    background-size: 400%;
+    border-radius: 10px;
+    filter: blur(38px);
+    animation: glowing 20s linear infinite;
+}
+
+
+.user-menu {
+    font-size: x-large;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.label-usuario {
+    font-size: small;
+    padding: 0 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .25rem 1rem;
+    display: inline-block;
+    width: 100%;
+    transition: .5s;
+    z-index: 1;
+    color: var(--text-light);
+    font-weight: bold;
+
+
+
+}
+
+
+/* section */
+.main-section {
+    height: 520px;
+}
+
+
+/* media query para el menu  */
+@media screen and (width > 768px) {
+    .main-header {
+        justify-content: flex-start;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .main-nav {
+        position: relative;
+        top: 0;
+        width: auto !important;
+        background-color: transparent;
+    }
+
+    .main-title {
+        font-size: 40px;
+    }
+
+    .nav-list {
+        margin: auto;
+    }
+
+    .nav-item {
+        list-style: none;
+    }
+
+    .nav-item:not(:last-child) {
+        border-bottom: none;
+    }
+
+    .nav-list {
+        height: 100%;
+    }
+
+    .nav-item .nav-link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: var(--text-light);
+    }
+
+
+    .nav-list {
+        display: flex
+    }
+
+    .user-menu {
+        margin-left: auto;
+    }
+
+    .banner-info {
+        top: 35%;
+        bottom: 10px;
+        right: 3%;
+        left: 55%;
+        font-size: 14px;
+    }
+
+}
+
+
+/* ---------------------------------------------- */
+/* ---------------CARD SECCION ------------------ *
+/* ---------------------------------------------- */
+
+.card-container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    gap: .75rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 520px;
+    box-shadow: 0 0 6px gray;
+    transition: all 300ms ease;
+    padding: 1rem;
+    margin: .5rem;
+    border-radius: 10px;
+
+    &:hover {
+        box-shadow: 0 0 12px 3px var(--primary-color-dark);
+        transform: scale(1.025);
+
+        .card-header {
+
+            .card-info-title,
+            .card-info-text {
+                height: auto;
+                max-height: 80px;
+                padding: .25rem .5rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+}
+
+.card-header {
+    height: 220px;
+    background-color: salmon;
+    position: relative;
+
+    .card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-info {
+        font-size: 14px;
+
+        .card-info-title,
+        .card-info-text {
+            position: absolute;
+            background-color: rgba(255, 0, 0, 0.3);
+            color: var(--bg-light);
+            width: 100%;
+            text-align: center;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 500ms ease;
+
+        }
+
+        .card-info-title {
+            top: 0;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+        }
+
+        .card-info-text {
+            bottom: 0;
+        }
+    }
+
+}
+
+
+.card-body {
+    flex-grow: 1;
+    font-size: 14px;
+    padding-bottom: .5rem;
+    display: flex;
+    flex-direction: column;
+
+    .card-title {
+        padding: 4px 8px;
+        border-bottom: 2px solid green;
+        text-underline-offset: 4px;
+        background: var(--gradiente);
+    }
+
+    .card-description {
+        /* esto es para mostrar una cantidad de linea determinada */
+        flex-grow: 1;
+        margin-bottom: 1rem;
+        padding: .5rem;
+        font-size: 14px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+        overflow: hidden;
+        text-overflow: ellipsis;   
+        font-weight: bold;
+
+    }
+
+    .card-values {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        align-items: flex-end;
+
+        .card-date {
+            font-size: .675rem;
+            color: var(--primary-color-dark);
+            padding: .5rem;
+            font-weight: bold;
+
+        }
+
+        .card-price {
+            font-size: 1.25rem;
+            font-weight: 900;
+            padding: .25rem 2rem;
+            background: var(--gradiente);
+            color: white;
+            border-radius: 3px;
+            box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.75);
+        }
+    }
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+
+    .card-btn {
+        padding: 6px 12px;
+        background: var(--gradiente);
+        font-size: 12px;
+        color: white;
+        text-decoration: none;
+        border: none;
+        font-family: var(--font-family);
+        transition: all 500ms ease;
+        border-radius: 3px;
+        font-weight: bold;
+        box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.75);
+
+        &:hover {
+            background: var(--gradiente-hover);
+            box-shadow:4px 4px 4px 0px rgba(81, 0, 0, 0.656);
+        }
+
+    }
+}
+
+
+/* ---------------------------------------------- */
+/* ---------------CARD SECCION END---------------- *
+/* ---------------------------------------------- */
+
+/* ----------------------------------------------- */
+/* ------------------ FEATURE ----------------------*/
+/* ----------------------------------------------- */
+.feature-section {
+    display: flex;
+    flex-direction: column;
+    color: grey;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--font-family);
+
+    .feature-title {
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-left: 10%;
+        margin-top: 1rem;
+    }
+
+    .feature-description {
+        font-size: 12px;
+        padding: 0 0 2rem 2.5rem;
+        display: flex;
+        width: 100%;
+        margin: .3rem 0 0 1.6rem;
+        font-weight: bold;
+    }
+
+}
+.feature{
+    margin: 1rem .5rem 1rem .5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    box-shadow: 9px 14px 29px -15px rgba(103, 101, 101, 0.523);
+    
+}
+
+
+@media screen and (width > 768px) {
+    .feature-section {
+        flex-direction: row;
+        justify-content:space-between;
+    }
+
+    .feature{
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        padding: 1rem 0 1rem 0;
+        margin: 1rem 0 1rem 0;
+    }
+
+}
+
+/* ----------------------------------------------------------------- */
+/* ------------------------- FOOTER --------------------------------- */
+/* ----------------------------------------------------------------- */
+
+
+
+.main-footer {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: var(--bg-light);
+    font-family: var(--font-family);
+    background-color: var(--secondary-color);
+    z-index: 0;
+}
+
+.main-footer section {
+    padding: 1rem;
+    flex: 1 0 0;
+    background-color: var(--section-bg);
+    position: relative;
+}
+
+.main-footer .compania {
+    text-align: center;
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.compania-title {
+    font-family: var(--font-family-h1);
+}
+
+.main-footer .redes-sociales {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-footer .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-footer .redes-sociales .social-link,
+.main-footer .contact .social-contact {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.icons {
+    padding: 0 10px;
+}
+
+.footer-link{
+    text-decoration: none;
+    color: var(--bg-light);
+    font-size:small;
+}
+
+.fa-brands,
+.fab,
+.fa-solid {
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    padding: 0 10px;
+}
+
+.main-footer .compania img {
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
+    margin: 0 auto;
+}
+
+.main-footer section:not(:last-child)::before {
+    content: "";
+    display: block;
+    width: 3px;
+    background-color: var(--primary-color-dark);
+    position: absolute;
+    right: 0%;
+    left: 50%;
+    top: 0%;
+    bottom: -100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px blue;
+    rotate: 100grad;
+}
+
+.compania h2 {
+    position: relative;
+    padding: 0 1rem;
+    z-index: 0;
+}
+
+.compania h2::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+    background-size: 600%;
+    border-radius: 10px;
+    filter: blur(10px);
+    animation: glowing 20s linear infinite;
+}
+
+@media screen and (width > 768px) {
+    .main-footer {
+        flex-direction: row;
+    }
+
+    .main-footer section:not(:last-child)::before {
+        top: 14%;
+        bottom: 15%;
+        left: 100%;
+        rotate: 0grad;
+
+    }
+
+
+
+}
+
+/* ------------------------------------------------ */
+/* ------------------END footer --------------------*/
+/* ------------------------------------------------ */
+
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+

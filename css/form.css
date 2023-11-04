@@ -1,0 +1,145 @@
+.main-section {
+    display: grid;
+    align-items: start;
+    justify-items: center;
+    justify-content: center;
+    border: none;
+    font-weight: bold;
+}
+
+.form{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #6d416d, #a5099d);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	/* height: 100vh; */
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.register {
+    margin: 1rem;
+    border: solid 1px;
+    padding: 0.5rem 0 0 0.75rem;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    width: 90%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgb(71, 71, 73) 0%, rgba(153, 148, 148, 1) 0%, rgba(71, 71, 73) 100%);
+}
+
+.div-register {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.label-register {
+    display: flex;
+    font-family: var(--font-family);
+    font-size:10px;
+    padding:  2px 0 2px 6px;
+}
+
+.input-wrapper :is(input, textarea, select) {
+    padding: .2rem .5rem;
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid var(--primary-color-dark);
+    border-radius: 5px 5px 0 0;
+    font-family: var(--font-family);
+    width: 240px;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 6px 12px;
+    background: var(--gradiente);
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-family: var(--font-family);
+    transition: all 600ms ease;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    font-weight: bold;   
+
+
+    &:hover {
+        background: var(--gradiente-hover);
+        box-shadow:5px 5px 5px 0px rgba(81, 0, 0, 0.656)
+    }
+}
+
+.btn-registrar {
+    margin: 0.25rem 0 0.5rem 165px;
+}
+
+.btn-contact {
+    margin: 0 0 0.5rem 181px;
+}
+
+
+.input-wrapper textarea {
+    resize: none;
+}
+
+/* -------------------------------------
+----------Contacto ------------------
+------------------------------------- */
+.contact-map {
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    border: solid 2px var(--primary-color-dark);
+    overflow: hidden;
+    margin: 0.25rem 1rem;
+    border-radius: 10px;
+
+}
+
+
+
+@media screen and (width > 768px) {
+    .register {
+        width: 320px;
+        padding-left: 1rem;
+    }
+
+
+    .input-wrapper :is(input, select, textarea) {
+        width: 280px;
+    }
+
+    .main-section {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .contact-map {
+        /* flex-basis: 0%; */
+        width: 50%;
+        height: 60%;
+        margin: 1rem;
+        border: none;
+    }
+
+    .btn-registrar {
+        margin: 0.25rem 0 0.5rem 205px;
+    }
+
+    .btn-contact {
+        margin: 0.25rem 0 0.5rem 221px;
+    }
+    
+}
