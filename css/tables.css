@@ -1,0 +1,271 @@
+.input-container {
+    margin-bottom: .5rem;
+
+    .input {
+        padding: .375rem .675rem;
+        font-size: 1rem;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        border-bottom: 3px solid crimson;
+        margin-left: 1rem;
+    }
+}
+
+
+.product-section,
+.user-section {
+    display: grid;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+.product-form,
+.user-form {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 680px;
+    width: 300px;
+}
+
+.input-group {
+    /* margin: 0 auto; */
+    margin-bottom: .75rem;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    width: 100%;
+
+    :is(input, textarea, select) {
+        padding: .375rem .675rem;
+        font-size: 1rem;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        border-bottom: 3px solid crimson;
+    }
+}
+
+.input-price {
+    width: 200px;
+}
+
+.input-image {
+    border-bottom: none;
+    margin-bottom: .75rem;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    width: 100%;
+
+    .input-select {
+        margin: .3rem 0 0 0;
+        color: #111;
+        font-size: 1rem;
+    }
+
+}
+
+.active {
+    padding-right: .5rem;
+    margin-left: .5rem;
+}
+
+.ck,
+.submit-btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+.btn-form {
+    margin-top: 3rem;
+    padding: 6px 12px;
+    background: var(--gradiente);
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-family: var(--font-family);
+    transition: all 500ms ease;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.product-table,
+.user-table {
+    width: 98%;
+    border-collapse: collapse;
+    margin: 2rem 0 2rem;
+    font-size: 7px;
+    display: block;
+    overflow-x: scroll;
+
+    .table-head {
+        background-color: crimson;
+        color: white;
+        padding: 10px;
+    }
+
+    .table-body {
+        tr {
+            &:nth-child(even) {
+                background-color: #333;
+            }
+
+            td {
+                padding: 10px;
+            }
+        }
+    }
+}
+
+.product-table :is(th, td) {
+    padding: 2px 5px;
+    border: 1px solid rgb(34, 11, 26);
+}
+
+.user-table :is(th, td) {
+    padding: 2px 5px;
+    border: 1px solid rgb(34, 11, 26);
+}
+
+.table-body .table-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+.action-btn {
+    background-color: green;
+    color: white;
+    padding: .25rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: xx-small;
+
+    &:not(:last-child) {
+        margin-right: 2px;
+    }
+
+    &.btn-danger {
+        background-color: crimson;
+    }
+}
+
+.user-action {
+    width: 115px;
+}
+
+
+
+
+@media screen and (width > 768px) {
+
+    .product-form,
+    .user-form {
+        width: 450px;
+        margin-inline: 1rem;
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .product-table,
+    .user-table {
+        font-size: small;
+
+        .table-body .table-image img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .product-table :is(th, td) {
+        padding: 5px 10px;
+    }
+
+    .user-table :is(th, td) {
+        padding: 5px 10px;
+    }
+
+    .action-btn {
+        font-size: small;
+    }
+
+    .input-search {
+        margin-left: 1.5rem;
+    }
+
+
+}
+
+@media screen and (width > 1250px) {
+
+    .product-section,
+    .user-section {
+        grid-template-columns: 1fr 5fr;
+    }
+
+    .product-table,
+    .user-table {
+        font-size: medium;
+    }
+
+}
+
+.input-search {
+    margin-top: 1rem;
+}
+
+
+.input-search>div {
+    display: inline-block;
+    position: relative;
+    filter: drop-shadow(0 1px #3d3f40);
+}
+
+.input-search>div:after {
+    content: "";
+    background: #111;
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    top: 18px;
+    right: -4px;
+    transform: rotate(135deg);
+}
+
+.input-search>div>input {
+    color: white;
+    font-size: 16px;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    border: solid 3px #111;
+    outline: none;
+    border-radius: 35px;
+    transition: width 0.5s;
+    margin-left: 1rem;
+}
+
+.input-search>div>input::placeholder {
+    color: white;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+
+.input-search>div>input:focus::placeholder {
+    opacity: 1;
+}
+
+.input-search>div>input:focus,
+.input-search>div>input:not(:placeholder-shown) {
+    width: 250px;
+}

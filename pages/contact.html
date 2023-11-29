@@ -34,17 +34,15 @@
                     <a class="nav-link" href="../pages/register.html">Registro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/login.html">Login</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="../pages/about-as.html">Acerca de</a>
                 </li>
             </ul>
+            <ul class="nav-list-admin"  id="nav-list-admin">
+            </ul>
         </nav>
 
-        <div class="user-menu">
-            <a class="label-usuario" href="../pages/login.html">Usuario</a>
-            <i class="fas fa-shopping-cart"></i>
+        <div class="user-menu" id="user-menu">
+            <a class="label-usuario" ></a>
         </div>
     </header>
     <main class="main-container form">
@@ -62,13 +60,14 @@
                     <!-- email -->
                     <div class="input-wrapper">
                         <label class="label-register" for="inputCorreo">Correo Electronico</label>
-                        <input class="input-contact"type="email" name="email" id="inputCorreo" placeholder="E-mail" required minlength="6"
-                            maxlength="140" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+                        <input class="input-contact" type="email" name="email" id="inputCorreo" placeholder="E-mail"
+                            required minlength="6" maxlength="140" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
                     </div>
                     <!-- OBS -->
                     <div class="input-wrapper">
                         <label class="label-register" for="inputObs">Mensaje</label>
-                        <textarea class="input-contact" name="obs" id="inputObs" cols="50" rows="10" required minlength="1" maxlength="150"></textarea>
+                        <textarea class="input-contact" name="obs" id="inputObs" cols="50" rows="10" required
+                            minlength="1" maxlength="150"></textarea>
                     </div>
                     <!-- Submit -->
                     <div>
@@ -127,6 +126,7 @@
             </ul>
         </section>
     </footer>
+    <script src="../js/header.js"></script>
 </body>
 
 </html>

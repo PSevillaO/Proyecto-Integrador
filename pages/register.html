@@ -34,17 +34,15 @@
                     <a class="nav-link" href="../pages/register.html">Registro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/login.html">Login</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="../pages/about-as.html">Acerca de</a>
                 </li>
             </ul>
+            <ul class="nav-list-admin"  id="nav-list-admin">
+            </ul>
         </nav>
 
-        <div class="user-menu">
-            <a class="label-usuario" href="../pages/login.html">Usuario</a>
-            <i class="fas fa-shopping-cart"></i>
+        <div class="user-menu" id="user-menu">
+            <a class="label-usuario"></a>
         </div>
     </header>
 
@@ -52,7 +50,8 @@
     <main class="main-container form">
     <h1 class="main-title">Registrate</h1>
     <section class="main-section">
-            <form class="register">
+            <form class="register" id="register">
+                <input type="hidden" name="id">
                 <div class="div-register">
                     <!-- nombre -->
                     <div class="input-wrapper">
@@ -63,8 +62,8 @@
                     </div>
                     <!-- email -->
                     <div class="input-wrapper">
-                        <label class="label-register" for="inputCorreo">Correo Electronico</label>
-                        <input type="email" name="email" id="inputCorreo" placeholder="E-mail" required minlength="6"
+                        <label class="label-register" for="email">Correo Electronico</label>
+                        <input type="email" name="email" id="email" placeholder="E-mail" required minlength="6"
                             maxlength="140" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
                     </div>
                     <!-- password -->
@@ -83,13 +82,13 @@
                     </div>
                     <!-- nacimiento -->
                     <div class="input-wrapper">
-                        <label class="label-register" for="inputNacimiento">Fecha de namiento</label>
-                        <input id="inputNacimiento" type="date" name="fechaDeNaciemiento">
+                        <label class="label-register" for="bornDate">Fecha de namiento</label>
+                        <input id="bornDate" type="date" name="bornDate">
                     </div>
                     <!-- Provincia -->
                     <div class="input-wrapper">
-                        <label class="label-register" for="inputProv">Selecione su provincia</label>
-                        <select name="pais" id="inputProv" placeholder="Provincia" required>
+                        <label class="label-register" for="location">Selecione su provincia</label>
+                        <select name="pais" id="location" placeholder="Provincia" required>
                             <option value=""></option>
                             <option value="buenos_aires">Buenos Aires</option>
                             <option value="caba">Ciudad Autonoma de Buenos Aires</option>
@@ -118,10 +117,18 @@
                         </select>
                     </div class="input-wrapper">
                     <!-- OBS -->
-                    <div class="input-wrapper">
-                        <label class="label-register" for="inputObs">Observaciones</label>
-                        <textarea name="obs" id="inputObs" cols="50" rows="10" required minlength="1" maxlength="150" ></textarea>
+                    <div class="input-wrapper">   
+                        <label class="label-register" for="user-role">Role</label>
+                        <select name="role" id="role">
+                            <option value="USER_ROLE">Usuario</option>
+                            <option value="ADMIN_ROLE">Administrador</option>
+                        </select>
                     </div>
+                    <div class="input-wrapper">
+                        <label class="label-register" for="image">Url de la imagen</label>
+                        <input type="url" name="image" id="image" >
+                    </div>
+                    <thead>
                     <!-- Submit -->
                     <div>
                         <button class="btn btn-registrar" type="submit">Registrar</button>
@@ -170,6 +177,13 @@
             </ul>
         </section>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/inicialData.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/register.js"></script>
+    <script src="../js/functions.js"></script>
+
 </body>
 
 </html>

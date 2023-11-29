@@ -34,17 +34,16 @@
                     <a class="nav-link" href="../pages/register.html">Registro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/login.html">Login</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="../pages/about-as.html">Acerca de</a>
                 </li>
             </ul>
+            <ul class="nav-list-admin"  id="nav-list-admin">
+            </ul>
         </nav>
+        
 
-        <div class="user-menu">
-            <a class="label-usuario" href="../pages/login.html">Usuario</a>
-            <i class="fas fa-shopping-cart"></i>
+        <div class="user-menu" id="user-menu">
+            <a class="label-usuario" ></a>
         </div>
     </header>
     <main class="main-container-login">
@@ -60,7 +59,7 @@
             <div class='light x7'></div>
             <div class='light x8'></div>
             <div class='light x9'></div>
-            <form class="login">
+            <form class="login" id="login-form">
                 <div class="div-login">
                     <h2 class="title-login">Sign In</h2>
 
@@ -73,9 +72,7 @@
                     <!-- password -->
                     <div class="input-wrapper">
                         <!-- <label class="label-login" for="inputPass">Password</label> -->
-                        <input class="input-login" type="password" name="password" id="inputPass" placeholder="Password" required
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                            title="Debe contener al menos un número y una letra mayúscula y minúscula, y al menos 8 o más caracteres">
+                        <input class="input-login" type="password" name="password" id="inputPass" placeholder="Password" required >
                     </div>
                     <!-- Submit -->
                     <div class="btn-wrapper" >
@@ -125,6 +122,10 @@
             </ul>
         </section>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/inicialData.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/header.js"></script>
 </body>
 
 </html>

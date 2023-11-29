@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="main-header">
+    <header class="main-header" id="main-header">
         <input class="input-check" type="checkbox" id="check-menu">
         <label class="burger-menu" for="check-menu">
             <span class="burger-line"></span>
@@ -33,17 +33,15 @@
                     <a class="nav-link" href="pages/register.html">Registro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/login.html">Login</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="pages/about-as.html">Acerca de</a>
                 </li>
             </ul>
+                <ul class="nav-list-admin" id="nav-list-admin">
+                </ul>
         </nav>
 
-        <div class="user-menu">
-            <a class="label-usuario" href="pages/login.html">Usuario</a>
-            <i class="fas fa-shopping-cart"></i>
+        <div class="user-menu" id="user-menu">
+            <a class="label-usuario" ></a>
         </div>
     </header>
 
@@ -67,220 +65,26 @@
 
     <main class="main-container  home-form">
         <h1 class="main-title">PRODUCTOS DESTACADOS</h1>
-        <section class="card-container">
-            <article class="card">
-                <header class="card-header">
-                    <img src="assets/image/product/Taza01.jpeg" alt="uncharter-game" class="card-img" loading="lazy">
-                    <div class="card-info">
-                        <h2 class="card-info-title">Taza Demon Slayer</h2>
-                        <p class="card-info-text">Taza Demosn Slayer del personaje Nezuku KamTaza</p>
-                    </div>
-                </header>
+        <section class="card-container" id="card-container">
 
-                <div class="card-body">
-                    <h2 class="card-title">Taza Demon Slayer</h2>
-                    <p class="card-description">Taza Demon Slayer - Kimetsu no Yaiba - Nezuku KamTaza hechas en
-                        ceramica, apta para microondas con sublimado de la mas alta calidad. Capacidad 320 ml
-                    </p>
-                    <div class="card-values">
-                        <div class="card-date">14/08/2023</div>
-                        <div class="card-price">$3380</div>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-btn">Ver mas</a>
-
-                    <button class="card-btn">Comprar</button>
-                </footer>
-            </article>
-            <article class="card">
-                <header class="card-header">
-                    <img src="assets/image/Product/Taza02.jpeg" alt="uncharter-game" class="card-img" loading="lazy">
-                    <div class="card-info">
-                        <h2 class="card-info-title">Taza Demon Slayer</h2>
-                        <p class="card-info-text">Taza Demosn Slayer del personaje Sanemi Shinazugawa</p>
-                    </div>
-                </header>
-
-                <div class="card-body">
-                    <h2 class="card-title">Taza Demon Slayer</h2>
-                    <p class="card-description">Taza Demon Slayer - Kimetsu no Yaiba - Sanemi Shinazugawa hechas en
-                        ceramica, apta para microondas con sublimado de la mas alta calidad. Capacidad 320 ml.</p>
-                    <div class="card-values">
-                        <div class="card-date">14/08/2023</div>
-                        <div class="card-price">$3380</div>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-btn">Ver mas</a>
-
-                    <button class="card-btn">Comprar</button>
-                </footer>
-            </article>
-            <article class="card">
-                <header class="card-header">
-                    <img src="assets/image/Product/Taza03.jpeg" alt="uncharter-game" class="card-img" loading="lazy">
-                    <div class="card-info">
-                        <h2 class="card-info-title">Taza Naruto</h2>
-                        <p class="card-info-text">Taza Naruto del zorro de las 9 colas </p>
-                    </div>
-                </header>
-
-                <div class="card-body">
-                    <h2 class="card-title">Taza Naruto</h2>
-                    <p class="card-description">Taza Naruto - Zorro de las 8 colas - Kurama - hechas en ceramica, apta
-                        para microondas con sublimado de la mas alta calidad. Capacidad 320 ml</p>
-                    <div class="card-values">
-                        <div class="card-date">14/08/2023</div>
-                        <div class="card-price">$3400</div>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-btn">Ver mas</a>
-                    <button class="card-btn">Comprar</button>
-                </footer>
-            </article>
-            <article class="card">
-                <header class="card-header">
-                    <img src="assets/image/Product/Taza04.jpeg" alt="uncharter-game" class="card-img" loading="lazy">
-                    <div class="card-info">
-                        <h2 class="card-info-title">Taza Naruto</h2>
-                        <p class="card-info-text">Taza Naruto Jugo </p>
-                    </div>
-                </header>
-
-                <div class="card-body">
-                    <h2 class="card-title">Taza Naruto</h2>
-                    <p class="card-description">Taza Naruto - Jugo - hechas en ceramica, apta para microondas con
-                        sublimado de la mas alta calidad. Capacidad 320 ml</p>
-                    <div class="card-values">
-                        <div class="card-date">14/08/2023</div>
-                        <div class="card-price">$3400</div>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-btn">Ver mas</a>
-
-                    <button class="card-btn">Comprar</button>
-                </footer>
-            </article>
-            <article class="card">
-                <header class="card-header">
-                    <img src="assets/image/Product/Taza05.jpeg" alt="uncharter-game" class="card-img" loading="lazy">
-                    <div class="card-info">
-                        <h2 class="card-info-title">Taza Naruto</h2>
-                        <p class="card-info-text">Taza Naruto Sasuke</p>
-                    </div>
-                </header>
-
-                <div class="card-body">
-                    <h2 class="card-title">Taza Naruto</h2>
-                    <p class="card-description">Taza Naruto - Sasuke - hechas en ceramica, apta para microondas con
-                        sublimado de la mas alta calidad. Capacidad 320 ml.</p>
-                    <div class="card-values">
-                        <div class="card-date">14/08/2023</div>
-                        <div class="card-price">$3400</div>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-btn">Ver mas</a>
-
-                    <button class="card-btn">Comprar</button>
-                </footer>
-            </article>
-            <article class="card">
-                <header class="card-header">
-                    <img src="assets/image/Product/Taza06.jpeg" alt="uncharter-game" class="card-img" loading="lazy">
-                    <div class="card-info">
-                        <h2 class="card-info-title">Taza Boruto</h2>
-                        <p class="card-info-text">Taza Boruto del personaje Mitsiki </p>
-                    </div>
-                </header>
-
-                <div class="card-body">
-                    <h2 class="card-title">Taza Boruto</h2>
-                    <p class="card-description">Taza Boruto - Mitsuki - hechas en ceramica, apta para microondas con
-                        sublimado de la mas alta calidad. Capacidad 320 ml..</p>
-                    <div class="card-values">
-                        <div class="card-date">14/08/2023</div>
-                        <div class="card-price">$3400</div>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-btn">Ver mas</a>
-
-                    <button class="card-btn">Comprar</button>
-                </footer>
-            </article>
-            <article class="card">
-                <header class="card-header">
-                    <img src="assets/image/Product/Taza07.jpeg" alt="uncharter-game" class="card-img" loading="lazy">
-                    <div class="card-info">
-                        <h2 class="card-info-title">Taza Demon Slayer</h2>
-                        <p class="card-info-text">Taza Demosn Slayer del personaje Nezuku KamTaza 2 </p>
-                    </div>
-                </header>
-
-                <div class="card-body">
-                    <h2 class="card-title">Taza Demon Slayer</h2>
-                    <p class="card-description">Taza Demon Slayer - Kimetsu no Yaiba - Nezuku KamTaza hechas en
-                        ceramica, apta para microondas con sublimado de la mas alta calidad. Capacidad 320 ml.</p>
-                    <div class="card-values">
-                        <div class="card-date">14/08/2023</div>
-                        <div class="card-price">$3380</div>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-btn">Ver mas</a>
-
-                    <button class="card-btn">Comprar</button>
-                </footer>
-            </article>
-            <article class="card">
-                <header class="card-header">
-                    <img src="assets/image/Product/Taza08.jpeg" alt="uncharter-game" class="card-img" loading="lazy">
-                    <div class="card-info">
-                        <h2 class="card-info-title">Taza Dragon Ball Super</h2>
-                        <p class="card-info-text">Taza Drgon Ball Super personaje Goku </p>
-                    </div>
-                </header>
-
-                <div class="card-body">
-                    <h2 class="card-title">Taza Dragon Ball Super</h2>
-                    <p class="card-description">Taza Dragon Ball Super - Goku - hechas en ceramica, apta para microondas
-                        con sublimado de la mas alta calidad. Capacidad 320 ml</p>
-                    <div class="card-values">
-                        <div class="card-date">14/08/2023</div>
-                        <div class="card-price">$3500</div>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-btn">Ver mas</a>
-
-                    <button class="card-btn">Comprar</button>
-                </footer>
-            </article>
         </section>
         <section class="feature-section">
 
-                <div class="feature">
-                    <i class="fas fa-truck feature-title"> Enviamos tu Compra</i>
-                    <p class="feature-description">Entregas a todo el Pais</p>
-                </div>
+            <div class="feature">
+                <i class="fas fa-truck feature-title"> Enviamos tu Compra</i>
+                <p class="feature-description">Entregas a todo el Pais</p>
+            </div>
 
+            <div class="feature">
+                <i class="far fa-credit-card feature-title"> Pagá como quieras</i>
+                <p class="feature-description">Tarjetas de credito o efectivo</p>
+            </div>
 
-                <div class="feature">
-                    <i class="far fa-credit-card feature-title"> Pagá como quieras</i>
-                    <p class="feature-description">Tarjetas de credito o efectivo</p>
-                </div>
-
-
-                <div class="feature">
-                    <i class="fas fa-unlock feature-title"> Comprá con seguridad</i>
-                    <p class="feature-description">Tus datos siempre protegidos</p>
-                </div>
+            <div class="feature">
+                <i class="fas fa-unlock feature-title"> Comprá con seguridad</i>
+                <p class="feature-description">Tus datos siempre protegidos</p>
+            </div>
         </section>
-
 
     </main>
 
@@ -288,13 +92,16 @@
         <section class="redes-sociales">
             <ul>
                 <li class="social-link">
-                    <i class="icons fa-brands fa-facebook"></i> <a class="footer-link" href="https://www.facebook.com/" target="_blank">Facebook</a>
+                    <i class="icons fa-brands fa-facebook"></i> <a class="footer-link" href="https://www.facebook.com/"
+                        target="_blank">Facebook</a>
                 </li>
                 <li class="social-link">
-                    <i class="icons fa-brands fa-twitter"></i> <a class="footer-link" href="https://www.x.com/" target="_blank">Twitter</a>
+                    <i class="icons fa-brands fa-twitter"></i> <a class="footer-link" href="https://www.x.com/"
+                        target="_blank">Twitter</a>
                 </li>
                 <li class="social-link">
-                    <i class="icons fa-brands fa-instagram"></i> <a class="footer-link" href="https://www.Instagram.com/" target="_blank">Instagram</a>
+                    <i class="icons fa-brands fa-instagram"></i> <a class="footer-link"
+                        href="https://www.Instagram.com/" target="_blank">Instagram</a>
                 </li>
             </ul>
         </section>
@@ -305,17 +112,26 @@
         <section class="contact">
             <ul>
                 <li class="social-contact">
-                    <i class="icons fa-regular fa-envelope"></i><a class="footer-link" href="pages/contact.html">info@MundosSublimados.com</a>
+                    <i class="icons fa-regular fa-envelope"></i><a class="footer-link"
+                        href="pages/contact.html">info@MundosSublimados.com</a>
                 </li>
                 <li class="social-contact">
-                    <i class="icons fas fa-phone"></i><a class="footer-link" href="pages/contact.html">+54-11-4144-1646</a> 
+                    <i class="icons fas fa-phone"></i><a class="footer-link"
+                        href="pages/contact.html">+54-11-4144-1646</a>
                 </li>
                 <li class="social-contact">
-                    <i class="icons  fas fa-store"></i><a class="footer-link" href="pages/contact.html">Direccion: Balcarce 50 CABA</a>
+                    <i class="icons  fas fa-store"></i><a class="footer-link" href="pages/contact.html">Direccion:
+                        Balcarce 50 CABA</a>
                 </li>
             </ul>
         </section>
     </footer>
+    
+    
+    <script src="js/inicialData.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/headerHome.js"></script>
 </body>
 
 </html>

@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/adminGuard.js"></script>
     <title>Document</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/tables.css">
 </head>
 
 <body>
@@ -45,59 +48,77 @@
             <a class="label-usuario" ></a>
         </div>
     </header>
-    <main class="main-container">
-        <div class="about-wrapper">
-            <div class="about-left">
-                <div class="about-left-content">
-                    <div class="left-div" >
-                        <div class="shadow">
-                            <div class="about-img ">
-                                <img src="../assets/image/logos/User.png"
-                                    alt="about image">
-                            </div>
-                            <div class="about-img-1">
-                                <img class="logo-left" src="../assets/image/logos/Logo.png"
-                                    alt="about image">
-                            </div>
-                                                        
 
-                        </div>
 
-                        <h2>Mundos Sublimados</h2>
-                        <h3>Sublimación</h3>
-                    </div>
-
-                    <ul class="icons-about">
-                        <li><i class="fab fa-facebook-f"></i></li>
-                        <li><i class="fab fa-twitter"></i></li>
-                        <li><i class="fab fa-linkedin"></i></li>
-                        <li><i class="fab fa-instagram"></i></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="about-right">
-                <h1>Hola<span>!</span></h1>
-                <h2>Esto es quién soy y lo qué hago</h2>
-                <div class="about-btns">
-                    <button type="button" class="btn btn-pink">Resumen / CV</button>
-                    <button type="button" class="btn btn-white">Git hub</button>
-                </div>
-
-                <div class="about-para">
-                    <p>En MundosSublimados, somos apasionados por llevar tu amor por el anime a tu vida cotidiana a través de nuestras creaciones únicas. Nos especializamos en la sublimación de tazas y productos afines con diseños inspirados en tus personajes y series de anime favoritas.</p>
-                    <p>Creatividad Infinita: En el corazón de nuestra empresa se encuentra la creatividad desenfrenada. Nos esforzamos por capturar la esencia y la magia del anime en cada taza que creamos.</p>
-                    <p>Calidad Inigualable: Cada taza que sale de nuestro taller es una obra maestra de calidad y durabilidad. Utilizamos los mejores materiales y técnicas de sublimación de vanguardia para garantizar que nuestros productos sean verdaderas piezas de colección.</p>
-                    <p>Satisfacción del Cliente: Tu satisfacción es nuestra prioridad número uno. Nos esforzamos por brindarte una experiencia de compra excepcional, desde el momento en que exploras nuestro catálogo hasta el momento en que sostienes tu taza de anime en tus manos.</p>
-                    
-                </div>
+    <main class="main-container form">
+        <h1 class="main-title">Productos</h1>
+        <div class="input-search">
+            <div>
+                <input type="text" class="input" id="search" placeholder="Buscar por Titulo">
             </div>
         </div>
+        <section class="product-section">
+            <form id="product-form" class="product-form">
+                <input type="hidden" name="id">
+                <div class="input-group">
+                    <label for="title">Titulo</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div class="input-group">
+                    <label for="fulltitle">Titulo Completo</label>
+                    <input type="text" name="fulltitle" id="fulltitle">
+                </div>
+                <div class="input-group">
+                    <label for="description">Descripcion</label>
+                    <textarea name="description" id="description" cols="40" rows="5"  minlength="1"
+                        maxlength="150"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="producdate">Fecha</label>
+                    <input type="date" name="producdate" id="producdate">
+                </div>
+                <div class="input-group">
+                    <label for="category">Categoria</label>
+                    <select name="category">
+                        <option value=""></option>
+                        <option value="Tazas">Tazas</option>
+                        <option value="Remeras">Remeras</option>
+                        <option value="Delantales">Delantales</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+                <div class="input-group input-price">
+                    <label for="price">Precio</label>
+                    <input type="number" name="price" id="price">
+                </div>
+                <div class="input-group">
+                    <label for="image">Url de la imagen</label>
+                    <input type="text" class="input-select" name="image" id="input-select" >
+                </div>
 
+                <div class="submit-btn"  >
+                    <button type="submit" class="btn-form" id="btn-form">Agregar</button>
+                </div>
+            </form>
 
+            <table class="product-table">
+                <thead>
+                    <tr class="table-head">
+                        <th>Imagen</th>
+                        <th>Titulo</th>
+                        <th>Titulo Completo</th>
+                        <th>Descripcion</th>
+                        <th>Fecha</th>
+                        <th>Precio</th>
+                        <th>Categoria</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </section>
     </main>
-
 
 
     <footer class="main-footer">
@@ -138,7 +159,12 @@
             </ul>
         </section>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/inicialData.js"></script>
+    <script src="../js/functions.js"></script>
+    <script src="../js/products.js"></script>
     <script src="../js/header.js"></script>
+
 </body>
 
 </html>
