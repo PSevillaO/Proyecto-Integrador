@@ -1,4 +1,4 @@
-const usersArray = JSON.parse(localStorage.getItem("users"));
+// const usersArray = JSON.parse(localStorage.getItem("users"));
 const userForm = document.getElementById('register')
 
 let existId;

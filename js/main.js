@@ -33,6 +33,8 @@ function pintaCards(arrayPintar) {
 }
 
 function verDetalle(id){
-    console.log(id)
+    const product = cardArray.find((prod) => id === prod.id)
+    localStorage.setItem("currentProduc", JSON.stringify(product));
+
     window.location.href = 'pages/productDetail.html';
 }

@@ -58,7 +58,7 @@
                         <label class="label-register" for="inputName">Nombre</label>
                         <input type="text" name="fullname" id="inputName" placeholder="Nombre"
                             title="Ingrese el Nombre completo" required minlength="5" maxlength="40"
-                            pattern="^[a-zA-Z]+( [a-zA-Z]+)*$" autofocus autocomplete="">
+                            pattern="^[a-zA-Z]+( [a-zA-Z]+)*$" autofocus autocomplete="" required>
                     </div>
                     <!-- email -->
                     <div class="input-wrapper">
@@ -83,7 +83,7 @@
                     <!-- nacimiento -->
                     <div class="input-wrapper">
                         <label class="label-register" for="bornDate">Fecha de namiento</label>
-                        <input id="bornDate" type="date" name="bornDate">
+                        <input id="bornDate" type="date" name="bornDate" required>
                     </div>
                     <!-- Provincia -->
                     <div class="input-wrapper">
@@ -179,7 +179,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/inicialData.js"></script>
+    <script src="../js/inicialData.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/register.js"></script>
     <script src="../js/functions.js"></script>
